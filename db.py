@@ -6,7 +6,6 @@ from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 
 from config import settings
 
-# Constraint and index names match what PostgreSQL chose in Lab 6.
 NAMING_CONVENTION = {
     "ix": "%(table_name)s_%(column_0_N_name)s_idx",
     "uq": "%(table_name)s_%(column_0_N_name)s_key",
