@@ -1,4 +1,4 @@
-from typing import Annotated
+from typing import Annotated, Optional
 
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -59,8 +59,8 @@ def read_root():
 @app.get("/courses", response_model=list[CourseOut])
 def list_courses(
     db: SessionDep,
-    is_elective: bool | None = None,
-    level: str | None = None,
+    is_elective: Optional[bool] = None,
+    level: Optional[str] = None,
     sort: str = "popular",
     p: dict = Depends(pagination),
 ):
